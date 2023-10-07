@@ -1,0 +1,28 @@
+# 替换空格                                                           
+
+* ID: 100280  | Passing rate: 74.9% | PaidOnly: false  | Difficulty: Easy 
+* Url: https://leetcode.cn/problems/ti-huan-kong-ge-lcof/ 
+* Topic: 字符串 
+
+## Test Case:
+
+```
+"We are happy."
+```
+
+---
+
+请实现一个函数，把字符串 `s` 中的每个空格替换成"%20"。
+
+
+**示例 1：**
+
+**输入：**s = "We are happy."
+**输出：**"We%20are%20happy."
+
+
+**限制：**
+
+`0 <= s 的长度 <= 10000`
+
+---
