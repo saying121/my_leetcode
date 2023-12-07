@@ -42,38 +42,29 @@ impl Solution {
     }
     fn traversal(node: &ND) -> i32 {
         let mut res = 0;
-        match node {
-            Some(node) => {
-                match &node.borrow().left {
-                    Some(left) => {
-                        res += Self::traversal(&Some(left.clone()));
-                    }
-                    None => {}
-                }
-                match &node.borrow().right {
-                    Some(right) => {
-                        res += Self::traversal(&Some(right.clone()));
-                    }
-                    None => {}
-                }
-
-                let left_val = match &node.borrow().left {
-                    Some(left) => left.borrow().val,
-                    None => 2,
-                };
-                let right_val = match &node.borrow().right {
-                    Some(right) => right.borrow().val,
-                    None => 2,
-                };
-                if left_val == 0 || right_val == 0 {
-                    node.borrow_mut().val = 1;
-                    res += 1;
-                } else if left_val == 1 || right_val == 1 {
-                    node.borrow_mut().val = 2;
-                } else if left_val == 2 && right_val == 2 {
-                }
+        if let Some(node) = node {
+            if let Some(left) = &node.borrow().left {
+                res += Self::traversal(&Some(Rc::clone(left)));
             }
-            None => {}
+            if let Some(right) = &node.borrow().right {
+                res += Self::traversal(&Some(Rc::clone(right)));
+            }
+
+            let left_val = match &node.borrow().left {
+                Some(left) => left.borrow().val,
+                None => 2,
+            };
+            let right_val = match &node.borrow().right {
+                Some(right) => right.borrow().val,
+                None => 2,
+            };
+            if left_val == 0 || right_val == 0 {
+                node.borrow_mut().val = 1;
+                res += 1;
+            } else if left_val == 1 || right_val == 1 {
+                node.borrow_mut().val = 2;
+            } else if left_val == 2 && right_val == 2 {
+            }
         }
         res
     }

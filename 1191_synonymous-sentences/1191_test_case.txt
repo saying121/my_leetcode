@@ -1,0 +1,4 @@
+[["happy","joy"],["sad","sorrow"],["joy","cheerful"]]
+"I am happy today but was sad yesterday"
+[["happy","joy"],["cheerful","glad"]]
+"I am happy today but was sad yesterday"

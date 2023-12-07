@@ -17,7 +17,10 @@ impl TreeNode {
     }
 }
 
+struct Solution;
+
 //start/
+
 // Definition for a binary tree node.
 // #[derive(Debug, PartialEq, Eq)]
 // pub struct TreeNode {
@@ -54,8 +57,6 @@ impl Solution {
     }
 }
 //end/
-
-struct Solution;
 
 fn main() {
     println!(
